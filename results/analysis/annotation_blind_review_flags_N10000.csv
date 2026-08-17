@@ -1,0 +1,21 @@
+cell_id,flagged_criteria_or_reason,notes
+1,see notes,"borderline: dim indoor snapshot; hands/subjects appear soft or low quality, uncertain if true defocus blur or just low source image quality"
+2,see notes,"borderline: photographed through a screen/mesh; unclear whether the resulting softness of the duck counts as blur (criterion 5) versus foreground occlusion, and whether shooting through the mesh counts as nonstandard framing (criterion 7)"
+14,see notes,borderline: bent-over deadlift starting position; unclear if this counts as an unusual/atypical pose versus a normal action/exercise photo
+21,see notes,borderline: only part of the keyboard is in focus (shallow depth of field); uncertain whether this counts as the main subject losing detail (criterion 5) or is excluded as background bokeh
+23,see notes,borderline: dynamic overhead-lift pose with body twist; uncertain if this counts as atypical composition versus a normal exercise photo
+29,see notes,borderline: chain-link fence pattern visible in background but its coverage of the total frame is close to the 25% threshold
+35,see notes,"borderline: bent-over deadlift pose, same ambiguity as cell 14/23 regarding what counts as an atypical pose"
+49,see notes,"borderline: street scene appears soft; uncertain whether this reflects true defocus/low resolution or distant atmospheric haze, which the codebook excludes"
+50,see notes,borderline: swimming pose with limbs splayed; uncertain whether this counts as an atypical/unusual pose versus a normal swimming posture for this animal
+52,see notes,borderline: solid saturated blue surface fills the frame; uncertain whether a plain solid-colored surface counts as a 'dominant artificial/saturated color cast' under criterion 4
+53,see notes,borderline: richly saturated red curtains dominate the frame; uncertain whether this is an artificial color cast or simply the venue's natural decor/lighting
+60,see notes,borderline: dominant saturated yellow wall color (criterion 4) and a dynamic jumping/spiking pose (criterion 7) are both subjective judgment calls per the codebook
+74,see notes,borderline: orange-peel dimple texture may or may not meet the 'repetitive geometric pattern' bar since it is an organic texture rather than discrete repeated elements
+80,see notes,borderline: fabric folds counted as repetitive lines is a stretch since they are one continuous surface rather than discrete repeated elements
+85,see notes,"borderline: grainy, low-quality microscopy-style image; uncertain whether this counts as 'low resolution' per the codebook versus inherent imaging-modality noise"
+86,see notes,borderline: a banner with text/logo is visible in the background but legibility is limited at this resolution
+87,see notes,borderline: subject viewed through a wire fence in the foreground; the occlusion coverage from the thin wires is difficult to estimate precisely against the 25% threshold
+92,see notes,borderline: window frame mullions occlude parts of the view; occlusion coverage is uncertain relative to the 25% threshold
+93,see notes,borderline: same ambiguity as cell 60 - saturated yellow wall color and dynamic jump action pose are subjective calls
+98,see notes,borderline: barber's hand/clippers partially cover the client's head; occlusion extent is near the 25% threshold

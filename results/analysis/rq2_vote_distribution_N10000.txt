@@ -1,0 +1,27 @@
+=== v4 RQ2: unit-scale vote counting (S_u=mean(B_1..B_9) selected units, N=10000) ===
+k = 9830 selected units (from 05_rq1_localization.py); expected total votes = 9 * 9830 = 88470
+total votes cast = 88470 (verified == 9*k)
+all vote image_ids verified in [0, 9999]
+
+wrote results/analysis/rq2_image_votes_N10000.csv (6319 distinct images received >=1 vote)
+
+images with >=1 vote: 6319 / 10000 (63.1900%)
+
+top-1 image: image_id=4187, class_id=418, votes=2188 (2.4732% of total)
+top-10 images: combined votes = 8307 (9.3896% of total 88470)
+top-50 images: combined votes = 19187 (21.6876% of total 88470)
+
+ rank  image_id  class_id   votes  distinct_units  distinct_blocks  distinct_layer_types  distinct_scales
+    1      4187       418    2188             464               15                     3                8
+    2      8282       828    1048             238               16                     3                9
+    3      4907       490     943             236               14                     3                9
+    4      9046       904     881             234               15                     3                9
+    5      2750       275     624             201               15                     3                9
+    6       848        84     570             170               12                     3                9
+    7      8156       815     561             139               14                     3                8
+    8      9049       904     542             122               14                     3                9
+    9       228        22     522             166               11                     3                9
+   10      9138       913     428             131               11                     3                9
+
+concentration: 383 images (6.0611% of the 6319 voted-for images, 3.8300% of all 10000) account for >=50% of total votes (88470).
+the remaining 44207 votes are spread across 5936 other images.

@@ -1,0 +1,40 @@
+=== v4 RQ2 pattern analysis: NEW top-50 (from unit-scale votes), class-matched control ===
+top-50 boundary vote count = 185; 1 images tied at this count, 1 of them included in the top-50 (tie-break: image_id ascending)
+
+top-50 spans 40 distinct classes (of 1000 total)
+per-class top-50 counts (class_id: k): {418: 1, 828: 1, 490: 1, 904: 4, 275: 1, 84: 2, 815: 1, 22: 1, 913: 1, 737: 1, 588: 1, 411: 2, 423: 1, 890: 2, 611: 1, 109: 2, 807: 1, 138: 1, 885: 2, 424: 1, 24: 1, 641: 1, 422: 2, 950: 1, 26: 1, 77: 1, 517: 1, 854: 2, 398: 1, 905: 1, 508: 1, 726: 1, 111: 1, 288: 1, 328: 1, 533: 1, 446: 1, 778: 1, 858: 1, 946: 1}
+
+matched control (1:1, within-class, without replacement, seed=42): 50 images (target 50)
+no shortfalls: every class had enough non-top images for a full 1:1 match.
+
+reused 10000 rows of precomputed features from results/rq2_image_features_N10000.csv (no pixels re-read)
+
+====================================================================================================
+                  feature   top_mean  ctrl_mean      diff   top_med  ctrl_med  cohens_d    CI_lo    CI_hi    perm_p
+        grayscale_entropy     6.6912     6.9566   -0.2654    7.2710    7.1901    -0.224  -0.7362  +0.1654    0.1196
+             edge_density     0.6477     0.5866   +0.0612    0.7003    0.5916    +0.228  -0.0449  +0.1621    0.0844
+      laplacian_sharpness     0.0771     0.0323   +0.0448    0.0444    0.0207    +0.637  +0.0190  +0.0724    0.0001
+       luminance_contrast     0.1842     0.2062   -0.0220    0.1738    0.2016    -0.317  -0.0497  +0.0054    0.0852
+          mean_saturation     0.3997     0.3265   +0.0731    0.3391    0.2922    +0.309  -0.0171  +0.1641    0.0505
+             colorfulness    45.1942    43.3583   +1.8359   38.2278   33.4063    +0.064  -9.0610 +13.0289    0.6920
+center_vs_border_contrast     0.0666     0.0900   -0.0234    0.0467    0.0736    -0.320  -0.0523  +0.0050    0.1631
+     jpeg_bytes_per_pixel     0.4054     0.3399   +0.0656    0.4371    0.3174    +0.432  +0.0060  +0.1221    0.0018
+
+Benjamini-Hochberg FDR-corrected q-values (across 8 features):
+          grayscale_entropy: q = 0.1595  -- not significant
+               edge_density: q = 0.1363  -- not significant
+        laplacian_sharpness: q = 0.0008  -- SIGNIFICANT (q<0.05)
+         luminance_contrast: q = 0.1363  -- not significant
+            mean_saturation: q = 0.1347  -- not significant
+               colorfulness: q = 0.6920  -- not significant
+  center_vs_border_contrast: q = 0.1864  -- not significant
+       jpeg_bytes_per_pixel: q = 0.0072  -- SIGNIFICANT (q<0.05)
+
+Interpretation: tests whether the 50 images most frequently voted for by pooled top-10% units
+(S_u = mean(B_1..B_9)) differ from class-matched non-selected images on 8 objective low-level
+pixel statistics. A significant difference is an ASSOCIATION between vote frequency and image
+statistics -- it does not identify a specific visual pattern (needs human annotation) and does
+not establish that these statistics cause anything about unit selectivity.
+
+wrote figures/rq2_top8_images_N10000.png, rq2_top50_supplement_N10000.png
+wrote figures/rq2_top_vs_control_N10000.png

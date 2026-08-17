@@ -1,0 +1,38 @@
+=== v3 Task 1: build N=10000 dataset manifest ===
+
+--- Phase 1: scanning 6 local shards (label + path columns only) ---
+  shard 26: 4358 rows scanned
+  shard 65: 4358 rows scanned
+  shard 84: 4358 rows scanned
+  shard 98: 4358 rows scanned
+  shard 233: 4357 rows scanned
+  shard 237: 4357 rows scanned
+
+total rows scanned: 26146
+candidates per class over all 1000 classes: min=11, max=46, mean=26.15
+classes with < 10 candidates: none
+
+label<->WNID consistency check (parquet `label` column vs data/meta/imagenet_class_index.json[label][0] vs WNID prefix of `image.path`), checked on ALL 26146 scanned rows: 0 mismatches
+PASS: every scanned row's image.path WNID prefix matches imagenet_class_index.json[label][0] for its parquet `label` value. This confirms the parquet label integer 0..999 uses the same WNID-sorted convention as data/meta/imagenet_class_index.json across all 1000 classes (not just the 100 previously spot-checked in M3).
+
+wrote results/shard_class_distribution.txt
+
+old-1000-image (shard,row)->(class,filename) consistency check against fresh scan: 0 inconsistencies
+PASS: all 1000 old images' (shard,row) locations match their recorded class_id and filename.
+
+--- Phase 2: hashing the 1000 old (mandatory, reused) images ---
+hashed 1000 old images, all distinct SHA256 (no internal duplicates)
+
+--- Phase 3: selecting 10 images for each of the 900 new classes ---
+  shard 26: extracted bytes for 2908 candidate rows
+  shard 65: extracted bytes for 2937 candidate rows
+  shard 84: extracted bytes for 2976 candidate rows
+  shard 98: extracted bytes for 2969 candidate rows
+  shard 233: extracted bytes for 2928 candidate rows
+  shard 237: extracted bytes for 2982 candidate rows
+
+new-class selection: 9000/9000 images selected, 0 decode failures encountered (fallback absorbed), 0 classes could not reach 10 images
+
+--- Phase 4: assembling final manifest ---
+
+wrote results/dataset_manifest_N10000.json (10000 images, 1000 classes, 1000 reused old + 9000 new)

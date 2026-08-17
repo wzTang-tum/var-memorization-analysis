@@ -1,0 +1,13 @@
+=== verification ===
+(1) only regimes B_1..B_9 (rows 3..11) read for scoring, for all 3 groups: PASS
+(2) S_u == mean(B_1..B_9), spot-checked 300 units (>=100/group): PASS
+(3) A/T/scale0 never referenced in common.py scoring code: PASS (matched patterns: [])
+(4) per-group candidate counts (fc1=65536, attn_proj=16384, fc2=16384) match NPZ: PASS
+(5) sum of selected units == k: len(selected)=9830, k=9830: PASS
+(6) block x layer-type joint table sums to k: sum=9830, k=9830: PASS
+(7) RQ2 total votes == 9*k: total_votes=88470, 9*k=88470: PASS
+(8) all vote image_ids in [0,9999]: min=2, max=9999: PASS
+
+======================================================================
+VERDICT: ALL 8 CHECKS PASSED.
+======================================================================

@@ -1,0 +1,31 @@
+=== v3 N=20 acceptance test (fc1+attn_proj+fc2, abs+clamp, dual accumulators) ===
+test set: 10 old-subset images + 10 new images = 20 total
+  image_id=410 seed_key=0 old_subset=True: 10 view hashes recorded
+  image_id=411 seed_key=1 old_subset=True: 10 view hashes recorded
+  image_id=412 seed_key=2 old_subset=True: 10 view hashes recorded
+  image_id=413 seed_key=3 old_subset=True: 10 view hashes recorded
+  image_id=414 seed_key=4 old_subset=True: 10 view hashes recorded
+  image_id=415 seed_key=5 old_subset=True: 10 view hashes recorded
+  image_id=416 seed_key=6 old_subset=True: 10 view hashes recorded
+  image_id=417 seed_key=7 old_subset=True: 10 view hashes recorded
+  image_id=418 seed_key=8 old_subset=True: 10 view hashes recorded
+  image_id=419 seed_key=9 old_subset=True: 10 view hashes recorded
+  image_id=0 seed_key=1000 old_subset=False: 10 view hashes recorded
+  image_id=1 seed_key=1001 old_subset=False: 10 view hashes recorded
+  image_id=2 seed_key=1002 old_subset=False: 10 view hashes recorded
+  image_id=3 seed_key=1003 old_subset=False: 10 view hashes recorded
+  image_id=4 seed_key=1004 old_subset=False: 10 view hashes recorded
+  image_id=5 seed_key=1005 old_subset=False: 10 view hashes recorded
+  image_id=6 seed_key=1006 old_subset=False: 10 view hashes recorded
+  image_id=7 seed_key=1007 old_subset=False: 10 view hashes recorded
+  image_id=8 seed_key=1008 old_subset=False: 10 view hashes recorded
+  image_id=9 seed_key=1009 old_subset=False: 10 view hashes recorded
+
+RawIdentityChecker: 960 hook calls checked (expected 960), violations = []
+PASS: abs/clamp bit-exact vs identical raw activation on every check, for fc1, attn_proj, AND fc2.
+PASS: no NaN/Inf in any of the 6 group accumulators at N=20 (sanity only).
+PASS: old_accs updated for exactly 10 old-subset images (n_images=10), independent from global accs (n_images=20).
+
+wrote results/v3_view_hashes_accept20.csv (200 rows)
+
+=== v3 N=20 acceptance test: ALL CHECKS PASSED ===

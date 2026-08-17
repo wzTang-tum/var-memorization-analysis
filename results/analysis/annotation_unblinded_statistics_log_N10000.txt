@@ -1,0 +1,78 @@
+=== RQ2 semantic-pattern unblinding & statistics (N=100 blind-annotated cells) ===
+
+loaded annotation file: D:\TUM\var-memorization-analysis\results\analysis\annotation_blind_N10000.csv (100 rows)
+loaded blind key: D:\TUM\var-memorization-analysis\results\analysis\rq2_blind_key_N10000.csv (100 rows)
+
+====================================================================================================
+SECTION 1: DATA VALIDATION
+====================================================================================================
+  [OK] annotation cell_id count == 100
+  [OK] annotation cell_id == 0..99, no duplicates
+  [OK] key cell_id count == 100
+  [OK] key cell_id == 0..99, no duplicates
+  [OK] every cell_id matched 1:1 between annotation and key
+  [OK] top/control counts == 50/50 (got {'control': 50, 'top': 50})
+  [OK] isolated_object_plain_background: values subset of {0,1} (got [0, 1])
+  [OK] extreme_closeup_or_unusual_crop: values subset of {0,1} (got [0, 1])
+  [OK] repetitive_texture_or_geometric_pattern: values subset of {0,1} (got [0, 1])
+  [OK] unusual_color_or_high_contrast: values subset of {0,1} (got [0, 1])
+  [OK] blur_low_resolution_or_compression_artifact: values subset of {0,1} (got [0, 1])
+  [OK] watermark_or_visible_text: values subset of {0,1} (got [0, 1])
+  [OK] unusual_pose_occlusion_or_atypical_composition: values subset of {0,1} (got [0, 1])
+  [OK] blind key has pair_id column: False
+  [OK] blind key has class_id column: True
+  [OK] blind key extra columns beyond cell_id/image_id/group/class_id: []
+
+Test-method decision: blind key has no pair_id and does have class_id => class-composition-preserving (stratified-by-class) permutation test, not McNemar (no explicit pairing) and not plain Fisher exact (class info is available).
+
+class strata: 40 distinct class_id values among the 100 annotated images
+top and control classes identical (same class_id support): True
+per-class top count == per-class control count for every class (fully balanced strata): True
+
+====================================================================================================
+SECTION 2: PER-PATTERN STATISTICS (top-50 vs. class-matched control-50)
+====================================================================================================
+
+                                         pattern  top_n1   top_p  ctrl_n1  ctrl_p  diff_pp       h   h_CIlo   h_CIhi   perm_p
+                isolated_object_plain_background      19   0.380       29   0.580    -20.0  -0.403   -0.804   +0.000   0.0435
+                 extreme_closeup_or_unusual_crop      23   0.460       11   0.220    +24.0  +0.514   +0.128   +0.924   0.0088
+         repetitive_texture_or_geometric_pattern      28   0.560       14   0.280    +28.0  +0.576   +0.167   +0.978   0.0017
+                  unusual_color_or_high_contrast      16   0.320        9   0.180    +14.0  +0.326   -0.048   +0.735   0.0941
+     blur_low_resolution_or_compression_artifact       5   0.100        1   0.020     +8.0  +0.360   +0.000   +0.823   0.1767
+                       watermark_or_visible_text       4   0.080        6   0.120     -4.0  -0.134   -0.574   +0.272   0.7261
+  unusual_pose_occlusion_or_atypical_composition       6   0.120       10   0.200     -8.0  -0.220   -0.629   +0.169   0.4089
+
+Benjamini-Hochberg FDR-corrected q-values (across 7 patterns):
+                  isolated_object_plain_background: q = 0.1015  -- not significant
+                   extreme_closeup_or_unusual_crop: q = 0.0308  -- SIGNIFICANT (q<0.05)
+           repetitive_texture_or_geometric_pattern: q = 0.0119  -- SIGNIFICANT (q<0.05)
+                    unusual_color_or_high_contrast: q = 0.1647  -- not significant
+       blur_low_resolution_or_compression_artifact: q = 0.2474  -- not significant
+                         watermark_or_visible_text: q = 0.7261  -- not significant
+    unusual_pose_occlusion_or_atypical_composition: q = 0.4770  -- not significant
+
+====================================================================================================
+SECTION 3: MOST COMMON IN TOP-50 vs. SIGNIFICANTLY ENRICHED vs. CONTROL
+====================================================================================================
+
+Ranked by prevalence within the top-50 (most to least common):
+           repetitive_texture_or_geometric_pattern: top= 56.0%  control= 28.0%  q=0.0119
+                   extreme_closeup_or_unusual_crop: top= 46.0%  control= 22.0%  q=0.0308
+                  isolated_object_plain_background: top= 38.0%  control= 58.0%  q=0.1015
+                    unusual_color_or_high_contrast: top= 32.0%  control= 18.0%  q=0.1647
+    unusual_pose_occlusion_or_atypical_composition: top= 12.0%  control= 20.0%  q=0.4770
+       blur_low_resolution_or_compression_artifact: top= 10.0%  control=  2.0%  q=0.2474
+                         watermark_or_visible_text: top=  8.0%  control= 12.0%  q=0.7261
+
+Patterns significantly enriched vs. class-matched control after BH-FDR (q<0.05): ['extreme_closeup_or_unusual_crop', 'repetitive_texture_or_geometric_pattern']
+
+Common-but-not-enriched (frequent in top-50, but q>=0.05 vs. control -- i.e. common among frequently-selected images in general, not specific to high UnitMem):
+  isolated_object_plain_background: top=38.0%, control=58.0%, diff=-20.0pp, q=0.1015
+
+Interpretation: this tests whether the 50 images most frequently selected by pooled top-10%
+units differ from class-matched non-selected images on 7 predefined binary visual/compositional
+patterns, scored blind (group identity and vote counts hidden) and reviewed by the author
+before unblinding. A significant q-value is an ASSOCIATION between vote frequency and a visual
+pattern's prevalence -- it does not establish that the pattern causes unit selectivity.
+
+wrote D:\TUM\var-memorization-analysis\results\analysis\annotation_unblinded_statistics_N10000.csv

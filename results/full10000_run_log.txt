@@ -1,0 +1,264 @@
+=== v3 official N=10000 run (fc1+attn_proj+fc2, abs+clamp, dual accumulators) ===
+re-seeding all RNGs to 42 before the official run
+  50/10000 images processed (1.07 img/s, ETA 154.6 min)
+  100/10000 images processed (1.15 img/s, ETA 143.8 min)
+  150/10000 images processed (1.16 img/s, ETA 141.8 min)
+  200/10000 images processed (1.15 img/s, ETA 141.5 min)
+  checkpoint saved at 200/10000 -> results/checkpoint_v3_N10000.pkl
+  250/10000 images processed (1.15 img/s, ETA 141.5 min)
+  300/10000 images processed (1.14 img/s, ETA 141.7 min)
+  350/10000 images processed (1.14 img/s, ETA 141.3 min)
+  400/10000 images processed (1.13 img/s, ETA 141.6 min)
+  checkpoint saved at 400/10000 -> results/checkpoint_v3_N10000.pkl
+  450/10000 images processed (1.12 img/s, ETA 142.0 min)
+  500/10000 images processed (1.12 img/s, ETA 141.7 min)
+  550/10000 images processed (1.12 img/s, ETA 141.2 min)
+  600/10000 images processed (1.11 img/s, ETA 141.5 min)
+  checkpoint saved at 600/10000 -> results/checkpoint_v3_N10000.pkl
+  650/10000 images processed (1.10 img/s, ETA 141.7 min)
+  700/10000 images processed (1.10 img/s, ETA 141.3 min)
+  750/10000 images processed (1.09 img/s, ETA 140.9 min)
+  800/10000 images processed (1.09 img/s, ETA 140.2 min)
+  checkpoint saved at 800/10000 -> results/checkpoint_v3_N10000.pkl
+  850/10000 images processed (1.09 img/s, ETA 140.2 min)
+  900/10000 images processed (1.09 img/s, ETA 139.3 min)
+  950/10000 images processed (1.09 img/s, ETA 138.5 min)
+  1000/10000 images processed (1.08 img/s, ETA 138.5 min)
+  checkpoint saved at 1000/10000 -> results/checkpoint_v3_N10000.pkl
+  1050/10000 images processed (1.08 img/s, ETA 137.9 min)
+  1100/10000 images processed (1.08 img/s, ETA 137.0 min)
+  1150/10000 images processed (1.08 img/s, ETA 136.1 min)
+  1200/10000 images processed (1.09 img/s, ETA 135.2 min)
+  checkpoint saved at 1200/10000 -> results/checkpoint_v3_N10000.pkl
+  1250/10000 images processed (1.09 img/s, ETA 134.3 min)
+  1300/10000 images processed (1.08 img/s, ETA 133.9 min)
+  1350/10000 images processed (1.08 img/s, ETA 133.1 min)
+  1400/10000 images processed (1.08 img/s, ETA 132.3 min)
+  checkpoint saved at 1400/10000 -> results/checkpoint_v3_N10000.pkl
+  1450/10000 images processed (1.08 img/s, ETA 131.7 min)
+  1500/10000 images processed (1.08 img/s, ETA 131.0 min)
+  1550/10000 images processed (1.08 img/s, ETA 130.2 min)
+  1600/10000 images processed (1.08 img/s, ETA 129.3 min)
+  checkpoint saved at 1600/10000 -> results/checkpoint_v3_N10000.pkl
+  1650/10000 images processed (1.08 img/s, ETA 128.7 min)
+  1700/10000 images processed (1.08 img/s, ETA 127.8 min)
+  1750/10000 images processed (1.08 img/s, ETA 126.9 min)
+  1800/10000 images processed (1.08 img/s, ETA 126.0 min)
+  checkpoint saved at 1800/10000 -> results/checkpoint_v3_N10000.pkl
+  1850/10000 images processed (1.08 img/s, ETA 125.3 min)
+  1900/10000 images processed (1.08 img/s, ETA 124.6 min)
+  1950/10000 images processed (1.08 img/s, ETA 124.1 min)
+  2000/10000 images processed (1.08 img/s, ETA 123.6 min)
+  checkpoint saved at 2000/10000 -> results/checkpoint_v3_N10000.pkl
+  2050/10000 images processed (1.08 img/s, ETA 123.0 min)
+  2100/10000 images processed (1.08 img/s, ETA 122.1 min)
+  2150/10000 images processed (1.08 img/s, ETA 121.3 min)
+  2200/10000 images processed (1.08 img/s, ETA 120.4 min)
+  checkpoint saved at 2200/10000 -> results/checkpoint_v3_N10000.pkl
+  2250/10000 images processed (1.08 img/s, ETA 119.6 min)
+  2300/10000 images processed (1.08 img/s, ETA 118.7 min)
+  2350/10000 images processed (1.08 img/s, ETA 117.8 min)
+  2400/10000 images processed (1.08 img/s, ETA 117.2 min)
+  checkpoint saved at 2400/10000 -> results/checkpoint_v3_N10000.pkl
+  2450/10000 images processed (1.08 img/s, ETA 116.4 min)
+  2500/10000 images processed (1.08 img/s, ETA 115.5 min)
+  2550/10000 images processed (1.08 img/s, ETA 114.7 min)
+  2600/10000 images processed (1.08 img/s, ETA 114.0 min)
+  checkpoint saved at 2600/10000 -> results/checkpoint_v3_N10000.pkl
+  2650/10000 images processed (1.08 img/s, ETA 113.3 min)
+  2700/10000 images processed (1.08 img/s, ETA 112.7 min)
+  2750/10000 images processed (1.08 img/s, ETA 112.2 min)
+  2800/10000 images processed (1.07 img/s, ETA 111.7 min)
+  checkpoint saved at 2800/10000 -> results/checkpoint_v3_N10000.pkl
+  2850/10000 images processed (1.07 img/s, ETA 111.2 min)
+  2900/10000 images processed (1.07 img/s, ETA 110.7 min)
+  2950/10000 images processed (1.07 img/s, ETA 110.2 min)
+  3000/10000 images processed (1.07 img/s, ETA 109.5 min)
+  checkpoint saved at 3000/10000 -> results/checkpoint_v3_N10000.pkl
+  3050/10000 images processed (1.07 img/s, ETA 108.7 min)
+  3100/10000 images processed (1.07 img/s, ETA 108.0 min)
+  3150/10000 images processed (1.06 img/s, ETA 107.4 min)
+  3200/10000 images processed (1.06 img/s, ETA 106.6 min)
+  checkpoint saved at 3200/10000 -> results/checkpoint_v3_N10000.pkl
+  3250/10000 images processed (1.06 img/s, ETA 106.0 min)
+  3300/10000 images processed (1.06 img/s, ETA 105.2 min)
+  3350/10000 images processed (1.06 img/s, ETA 104.5 min)
+  3400/10000 images processed (1.06 img/s, ETA 103.9 min)
+  checkpoint saved at 3400/10000 -> results/checkpoint_v3_N10000.pkl
+  3450/10000 images processed (1.06 img/s, ETA 103.3 min)
+  3500/10000 images processed (1.06 img/s, ETA 102.5 min)
+  3550/10000 images processed (1.06 img/s, ETA 101.8 min)
+  3600/10000 images processed (1.06 img/s, ETA 101.1 min)
+  checkpoint saved at 3600/10000 -> results/checkpoint_v3_N10000.pkl
+  3650/10000 images processed (1.05 img/s, ETA 100.3 min)
+  3700/10000 images processed (1.06 img/s, ETA 99.5 min)
+  3750/10000 images processed (1.06 img/s, ETA 98.7 min)
+  3800/10000 images processed (1.06 img/s, ETA 97.9 min)
+  checkpoint saved at 3800/10000 -> results/checkpoint_v3_N10000.pkl
+  3850/10000 images processed (1.06 img/s, ETA 97.1 min)
+  3900/10000 images processed (1.06 img/s, ETA 96.3 min)
+  3950/10000 images processed (1.06 img/s, ETA 95.5 min)
+  4000/10000 images processed (1.06 img/s, ETA 94.7 min)
+  checkpoint saved at 4000/10000 -> results/checkpoint_v3_N10000.pkl
+  4050/10000 images processed (1.06 img/s, ETA 93.9 min)
+  4100/10000 images processed (1.06 img/s, ETA 93.1 min)
+  4150/10000 images processed (1.06 img/s, ETA 92.3 min)
+  4200/10000 images processed (1.06 img/s, ETA 91.6 min)
+  checkpoint saved at 4200/10000 -> results/checkpoint_v3_N10000.pkl
+  4250/10000 images processed (1.05 img/s, ETA 90.9 min)
+  4300/10000 images processed (1.05 img/s, ETA 90.1 min)
+  4350/10000 images processed (1.05 img/s, ETA 89.3 min)
+  4400/10000 images processed (1.05 img/s, ETA 88.6 min)
+  checkpoint saved at 4400/10000 -> results/checkpoint_v3_N10000.pkl
+  4450/10000 images processed (1.05 img/s, ETA 87.9 min)
+  4500/10000 images processed (1.05 img/s, ETA 87.2 min)
+  4550/10000 images processed (1.05 img/s, ETA 86.6 min)
+  4600/10000 images processed (1.05 img/s, ETA 85.9 min)
+  checkpoint saved at 4600/10000 -> results/checkpoint_v3_N10000.pkl
+  4650/10000 images processed (1.05 img/s, ETA 85.2 min)
+  4700/10000 images processed (1.05 img/s, ETA 84.4 min)
+  4750/10000 images processed (1.05 img/s, ETA 83.6 min)
+  4800/10000 images processed (1.05 img/s, ETA 82.8 min)
+  checkpoint saved at 4800/10000 -> results/checkpoint_v3_N10000.pkl
+  4850/10000 images processed (1.05 img/s, ETA 82.1 min)
+  4900/10000 images processed (1.05 img/s, ETA 81.3 min)
+  4950/10000 images processed (1.05 img/s, ETA 80.4 min)
+  5000/10000 images processed (1.05 img/s, ETA 79.6 min)
+  checkpoint saved at 5000/10000 -> results/checkpoint_v3_N10000.pkl
+  5050/10000 images processed (1.05 img/s, ETA 78.8 min)
+  5100/10000 images processed (1.05 img/s, ETA 78.0 min)
+  5150/10000 images processed (1.05 img/s, ETA 77.2 min)
+  5200/10000 images processed (1.05 img/s, ETA 76.5 min)
+  checkpoint saved at 5200/10000 -> results/checkpoint_v3_N10000.pkl
+  5250/10000 images processed (1.05 img/s, ETA 75.7 min)
+  5300/10000 images processed (1.05 img/s, ETA 74.9 min)
+  5350/10000 images processed (1.05 img/s, ETA 74.1 min)
+  5400/10000 images processed (1.05 img/s, ETA 73.3 min)
+  checkpoint saved at 5400/10000 -> results/checkpoint_v3_N10000.pkl
+  5450/10000 images processed (1.05 img/s, ETA 72.5 min)
+  5500/10000 images processed (1.05 img/s, ETA 71.7 min)
+  5550/10000 images processed (1.05 img/s, ETA 70.9 min)
+  5600/10000 images processed (1.05 img/s, ETA 70.1 min)
+  checkpoint saved at 5600/10000 -> results/checkpoint_v3_N10000.pkl
+  5650/10000 images processed (1.05 img/s, ETA 69.3 min)
+  5700/10000 images processed (1.05 img/s, ETA 68.5 min)
+  5750/10000 images processed (1.05 img/s, ETA 67.7 min)
+  5800/10000 images processed (1.05 img/s, ETA 67.0 min)
+  checkpoint saved at 5800/10000 -> results/checkpoint_v3_N10000.pkl
+  5850/10000 images processed (1.05 img/s, ETA 66.2 min)
+  5900/10000 images processed (1.05 img/s, ETA 65.4 min)
+  5950/10000 images processed (1.04 img/s, ETA 64.6 min)
+  6000/10000 images processed (1.04 img/s, ETA 63.8 min)
+  checkpoint saved at 6000/10000 -> results/checkpoint_v3_N10000.pkl
+  6050/10000 images processed (1.04 img/s, ETA 63.1 min)
+  6100/10000 images processed (1.04 img/s, ETA 62.3 min)
+  6150/10000 images processed (1.04 img/s, ETA 61.5 min)
+  6200/10000 images processed (1.04 img/s, ETA 60.7 min)
+  checkpoint saved at 6200/10000 -> results/checkpoint_v3_N10000.pkl
+  6250/10000 images processed (1.04 img/s, ETA 59.9 min)
+  6300/10000 images processed (1.04 img/s, ETA 59.1 min)
+  6350/10000 images processed (1.04 img/s, ETA 58.3 min)
+  6400/10000 images processed (1.04 img/s, ETA 57.5 min)
+  checkpoint saved at 6400/10000 -> results/checkpoint_v3_N10000.pkl
+  6450/10000 images processed (1.04 img/s, ETA 56.7 min)
+  6500/10000 images processed (1.04 img/s, ETA 55.9 min)
+  6550/10000 images processed (1.04 img/s, ETA 55.1 min)
+  6600/10000 images processed (1.04 img/s, ETA 54.3 min)
+  checkpoint saved at 6600/10000 -> results/checkpoint_v3_N10000.pkl
+  6650/10000 images processed (1.04 img/s, ETA 53.5 min)
+  6700/10000 images processed (1.04 img/s, ETA 52.7 min)
+  6750/10000 images processed (1.04 img/s, ETA 51.9 min)
+  6800/10000 images processed (1.04 img/s, ETA 51.1 min)
+  checkpoint saved at 6800/10000 -> results/checkpoint_v3_N10000.pkl
+  6850/10000 images processed (1.04 img/s, ETA 50.3 min)
+  6900/10000 images processed (1.04 img/s, ETA 49.5 min)
+  6950/10000 images processed (1.04 img/s, ETA 48.7 min)
+  7000/10000 images processed (1.04 img/s, ETA 47.9 min)
+  checkpoint saved at 7000/10000 -> results/checkpoint_v3_N10000.pkl
+  7050/10000 images processed (1.04 img/s, ETA 47.1 min)
+  7100/10000 images processed (1.04 img/s, ETA 46.3 min)
+  7150/10000 images processed (1.04 img/s, ETA 45.5 min)
+  7200/10000 images processed (1.04 img/s, ETA 44.7 min)
+  checkpoint saved at 7200/10000 -> results/checkpoint_v3_N10000.pkl
+  7250/10000 images processed (1.04 img/s, ETA 43.9 min)
+  7300/10000 images processed (1.04 img/s, ETA 43.1 min)
+  7350/10000 images processed (1.04 img/s, ETA 42.3 min)
+  7400/10000 images processed (1.04 img/s, ETA 41.5 min)
+  checkpoint saved at 7400/10000 -> results/checkpoint_v3_N10000.pkl
+  7450/10000 images processed (1.04 img/s, ETA 40.7 min)
+  7500/10000 images processed (1.04 img/s, ETA 39.9 min)
+  7550/10000 images processed (1.04 img/s, ETA 39.1 min)
+  7600/10000 images processed (1.04 img/s, ETA 38.3 min)
+  checkpoint saved at 7600/10000 -> results/checkpoint_v3_N10000.pkl
+  7650/10000 images processed (1.04 img/s, ETA 37.5 min)
+  7700/10000 images processed (1.04 img/s, ETA 36.7 min)
+  7750/10000 images processed (1.04 img/s, ETA 35.9 min)
+  7800/10000 images processed (1.04 img/s, ETA 35.1 min)
+  checkpoint saved at 7800/10000 -> results/checkpoint_v3_N10000.pkl
+  7850/10000 images processed (1.04 img/s, ETA 34.3 min)
+  7900/10000 images processed (1.04 img/s, ETA 33.6 min)
+  7950/10000 images processed (1.04 img/s, ETA 32.7 min)
+  8000/10000 images processed (1.04 img/s, ETA 32.0 min)
+  checkpoint saved at 8000/10000 -> results/checkpoint_v3_N10000.pkl
+  8050/10000 images processed (1.04 img/s, ETA 31.2 min)
+  8100/10000 images processed (1.04 img/s, ETA 30.4 min)
+  8150/10000 images processed (1.04 img/s, ETA 29.5 min)
+  8200/10000 images processed (1.04 img/s, ETA 28.7 min)
+  checkpoint saved at 8200/10000 -> results/checkpoint_v3_N10000.pkl
+  8250/10000 images processed (1.04 img/s, ETA 27.9 min)
+  8300/10000 images processed (1.04 img/s, ETA 27.2 min)
+  8350/10000 images processed (1.04 img/s, ETA 26.4 min)
+  8400/10000 images processed (1.04 img/s, ETA 25.6 min)
+  checkpoint saved at 8400/10000 -> results/checkpoint_v3_N10000.pkl
+  8450/10000 images processed (1.04 img/s, ETA 24.8 min)
+  8500/10000 images processed (1.04 img/s, ETA 24.0 min)
+  8550/10000 images processed (1.04 img/s, ETA 23.2 min)
+  8600/10000 images processed (1.04 img/s, ETA 22.4 min)
+  checkpoint saved at 8600/10000 -> results/checkpoint_v3_N10000.pkl
+  8650/10000 images processed (1.04 img/s, ETA 21.6 min)
+  8700/10000 images processed (1.04 img/s, ETA 20.8 min)
+  8750/10000 images processed (1.04 img/s, ETA 20.0 min)
+  8800/10000 images processed (1.04 img/s, ETA 19.2 min)
+  checkpoint saved at 8800/10000 -> results/checkpoint_v3_N10000.pkl
+  8850/10000 images processed (1.04 img/s, ETA 18.4 min)
+  8900/10000 images processed (1.04 img/s, ETA 17.6 min)
+  8950/10000 images processed (1.04 img/s, ETA 16.8 min)
+  9000/10000 images processed (1.04 img/s, ETA 16.0 min)
+  checkpoint saved at 9000/10000 -> results/checkpoint_v3_N10000.pkl
+  9050/10000 images processed (1.04 img/s, ETA 15.2 min)
+  9100/10000 images processed (1.04 img/s, ETA 14.4 min)
+  9150/10000 images processed (1.04 img/s, ETA 13.6 min)
+  9200/10000 images processed (1.04 img/s, ETA 12.8 min)
+  checkpoint saved at 9200/10000 -> results/checkpoint_v3_N10000.pkl
+  9250/10000 images processed (1.04 img/s, ETA 12.0 min)
+  9300/10000 images processed (1.04 img/s, ETA 11.2 min)
+  9350/10000 images processed (1.04 img/s, ETA 10.4 min)
+  9400/10000 images processed (1.04 img/s, ETA 9.6 min)
+  checkpoint saved at 9400/10000 -> results/checkpoint_v3_N10000.pkl
+  9450/10000 images processed (1.04 img/s, ETA 8.8 min)
+  9500/10000 images processed (1.04 img/s, ETA 8.0 min)
+  9550/10000 images processed (1.04 img/s, ETA 7.2 min)
+  9600/10000 images processed (1.04 img/s, ETA 6.4 min)
+  checkpoint saved at 9600/10000 -> results/checkpoint_v3_N10000.pkl
+  9650/10000 images processed (1.04 img/s, ETA 5.6 min)
+  9700/10000 images processed (1.04 img/s, ETA 4.8 min)
+  9750/10000 images processed (1.04 img/s, ETA 4.0 min)
+  9800/10000 images processed (1.04 img/s, ETA 3.2 min)
+  checkpoint saved at 9800/10000 -> results/checkpoint_v3_N10000.pkl
+  9850/10000 images processed (1.04 img/s, ETA 2.4 min)
+  9900/10000 images processed (1.04 img/s, ETA 1.6 min)
+  9950/10000 images processed (1.04 img/s, ETA 0.8 min)
+  10000/10000 images processed (1.04 img/s, ETA 0.0 min)
+  checkpoint saved at 10000/10000 -> results/checkpoint_v3_N10000.pkl
+fc1: unitmem range=[0.000000, 0.998232], no NaN/Inf -- OK
+fc1_clamp: unitmem range=[0.000000, 1.000000], no NaN/Inf -- OK
+attn_proj: unitmem range=[0.010070, 0.859561], no NaN/Inf -- OK
+attn_proj_clamp: unitmem range=[0.000000, 1.000000], no NaN/Inf -- OK
+fc2: unitmem range=[0.008651, 0.882242], no NaN/Inf -- OK
+fc2_clamp: unitmem range=[0.000000, 1.000000], no NaN/Inf -- OK
+global accumulator n_images=10000 (OK), old-subset accumulator n_images=1000 (OK)
+wrote results/unitmem_N10000_global.npz
+wrote results/unitmem_old_subset_within_N10000.npz
+
+wall time=9622.2s (2.673 h), peak VRAM=3881.9 MB, VAE encode total=4375.5s, VAR forward total=3757.5s
+removed checkpoint results/checkpoint_v3_N10000.pkl (run completed successfully)
