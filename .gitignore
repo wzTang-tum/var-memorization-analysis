@@ -18,15 +18,6 @@
 /results/*view_hashes*.csv
 /results/checkpoint_N10000.pkl
 
-# LaTeX build artifacts
-report/*.aux
-report/*.bbl
-report/*.blg
-report/*.log
-report/*.out
-report/*.fls
-report/*.fdb_latexmk
-
 __pycache__/
 *.pyc
 .DS_Store

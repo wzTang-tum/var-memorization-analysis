@@ -1,11 +1,11 @@
 """
-Build the RQ2 feature-comparison figure used in the two-page report.
+Build the RQ2 feature-comparison figure (class-matched feature differences,
+top-50 vs. control).
 
-This is the public-repository variant: it reproduces only the statistical
-panel (class-matched feature differences) of the original figure. The
-companion "most-voted images" panel is omitted here because it renders
-actual ImageNet training-image thumbnails, which the dataset's license
-does not permit redistributing; see README.md.
+This reproduces only the statistical panel of low-level image features. A
+companion "most-voted images" panel is intentionally not reproduced here
+because it would render actual ImageNet training-image thumbnails, which
+the dataset's license does not permit redistributing; see README.md.
 """
 
 from __future__ import annotations
@@ -20,10 +20,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results" / "analysis"
 FEATURES = ROOT / "results" / "image_features.csv"
-OUTPUT = ROOT / "report" / "fig2_rq2.png"
+OUTPUT = ROOT / "results" / "figures" / "fig2_rq2.png"
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -85,5 +85,6 @@ for ax, (column, label, statistic) in zip(axes, feature_specs):
         spine.set_color("0.35")
         spine.set_linewidth(0.6)
 
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 fig.savefig(OUTPUT, dpi=320, bbox_inches="tight", facecolor="white")
 print(OUTPUT)

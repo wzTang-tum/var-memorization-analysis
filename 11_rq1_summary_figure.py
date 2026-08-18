@@ -1,4 +1,5 @@
-"""Build the compact RQ1 localization figure used in the two-page report."""
+"""Build the compact RQ1 localization summary figure (layer-type selection
+rate + block x layer-type selection-rate heatmap)."""
 
 from __future__ import annotations
 
@@ -11,9 +12,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 DATA = np.load(ROOT / "results" / "analysis" / "v4_selection.npz")
-OUTPUT = ROOT / "report" / "fig1_rq1.png"
+OUTPUT = ROOT / "results" / "figures" / "fig1_rq1.png"
 
 groups = ["fc1", "attn.proj", "fc2"]
 candidate_totals = np.array([65_536, 16_384, 16_384])
@@ -68,5 +69,6 @@ for axis in (ax_bar, ax_heat):
         spine.set_linewidth(0.6)
 
 fig.subplots_adjust(left=0.065, right=0.965, bottom=0.16, top=0.88)
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 fig.savefig(OUTPUT, dpi=320, bbox_inches="tight", facecolor="white")
 print(OUTPUT)

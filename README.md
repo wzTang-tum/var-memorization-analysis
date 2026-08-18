@@ -12,7 +12,8 @@ architecture and asks two questions:
 - **RQ2** — Which training images do those units respond to most selectively, and do
   those images share common visual patterns compared with class-matched controls?
 
-The two-page write-up is in [`report/paper.pdf`](report/paper.pdf).
+A narrative summary of the findings is in [`results/SUMMARY.md`](results/SUMMARY.md), with the
+two summary figures under [`results/figures/`](results/figures/).
 
 ## Method summary
 
@@ -54,9 +55,10 @@ common.py                      shared helpers for the RQ1/RQ2 post-processing st
 08_build_annotation_materials.py  blind annotation materials for semantic patterns
 09_semantic_pattern_analysis.py   RQ2: unblinded semantic-pattern statistics
 10_semantic_pattern_figure.py     supplementary figure for semantic patterns
+11_rq1_summary_figure.py       RQ1 summary figure (layer-type / block heatmap)
+12_rq2_feature_figure.py       RQ2 summary figure (class-matched feature differences)
 verify_results.py              structural/numerical self-checks on the pipeline output
-report/                        two-page ICLR-format write-up (LaTeX source + PDF)
-results/                       small, human-readable result summaries (see below)
+results/                       result summaries and figures (see below)
 ```
 
 Scripts are numbered in pipeline order and run from the repository root, e.g.
@@ -74,11 +76,11 @@ Scripts are numbered in pipeline order and run from the repository root, e.g.
   obtaining access requires accepting ImageNet's terms. `01_build_subset.py` and
   `02_build_manifest.py` build this subset locally given an `HF_TOKEN` with access.
 - **Any figure containing image thumbnails.** ImageNet's terms of use do not permit
-  redistributing the images themselves. `fig2_rq2.png` in the report therefore only
-  shows the statistical comparison panel; the original figure's companion panel of
-  most-voted image thumbnails, and a few supplementary figures/contact sheets built
-  purely for visual inspection, are omitted from this repository (the scripts that
-  produce them, given the data, are still included).
+  redistributing the images themselves. `results/figures/fig2_rq2.png` therefore only
+  shows the statistical comparison panel; a companion panel of most-voted image
+  thumbnails, and a few supplementary figures/contact sheets built purely for visual
+  inspection, are omitted from this repository (the scripts that produce them, given
+  the data, are still included).
 - **Large intermediate arrays** (the raw per-unit activation statistics, tens of MB of
   `.npz` files) — regenerable by running the pipeline, but not committed. `results/`
   contains the small human-readable summaries and the two small `.npz` files needed by
